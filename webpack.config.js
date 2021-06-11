@@ -32,6 +32,13 @@ module.exports = {
           filename: "assets/images/[hash][ext]",
         },
       },
+      {
+        test: /\.(woff|woff2)/,
+        type: "asset/resource",
+        generator: {
+          filename: "static/fonts/[hash][ext]",
+        },
+      },
     ],
   },
   plugins: [
