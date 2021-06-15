@@ -14,6 +14,7 @@ module.exports = {
     filename: "[name].js",
     clean: true,
   },
+  watch: true,
   resolve: {
     extensions: [".js"],
     alias: {
