@@ -2,7 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const DotenvWebpack = require("dotenv-webpack");
-// const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 /** @type {import('webpack').Configuration} */
 
@@ -14,7 +13,6 @@ module.exports = {
     filename: "[name].js",
     clean: true,
   },
-  watch: true,
   resolve: {
     extensions: [".js"],
     alias: {
@@ -59,13 +57,12 @@ module.exports = {
     }),
     new DotenvWebpack(),
     new MiniCssExtractPlugin({ filename: "[name].css" }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve("src", "assets", "images"),
-    //       to: path.resolve("dist", "assets", "images"),
-    //     },
-    //   ],
-    // }),
   ],
+  devServer: {
+    contentBase: path.resolve("dist"),
+    compress: true,
+    historyApiFallback: true,
+    port: "3003",
+    open: true,
+  },
 };
