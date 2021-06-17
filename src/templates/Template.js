@@ -1,39 +1,34 @@
 import getData from "@utils/getData.js";
-import gitHubLogo from "@images/github.png";
-import instagramLogo from "@images/instagram.png";
-import twitterLogo from "@images/twitter.png";
+import gitHubLogo from "@images/github.svg";
+import linkedInLogo from "@images/linkedIn.svg";
+import twitterLogo from "@images/twitter.svg";
 
 const Template = async () => {
   const data = await getData();
   const view = `
     <div class="About">
       <div class="card">
-        <div class="card_details">
-          <div class="card_photo center circle">
-            <img src="${data.picture.large}" alt="${data.name.first}">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="enable-background:new -580 439 577.9 194;"
-              xml:space="preserve">
-              <circle cx="50" cy="50" r="40" />
-            </svg>
-          </div>
-          <p class="card_title">Hi, My name is</p>
-          <p class="card_value">${data.name.first} ${data.name.last}</p>
+        <div class="card_photo">
+          <img src="${data.picture.large}" alt="${data.name.first}">
         </div>
+        <p class="card_title">Hi, My name is</p>
+        <p class="card_value">${data.name.first} ${data.name.last}</p>
         <div class="card_userdata">
           <ul>
-            <li>${data.email}</li>
             <li>${data.location.country}</li>
+            <li>·</li>
+            <li>${data.dob.age} years old</li>
           </ul>
         </div>
         <div class="card_social">
-          <a href="https://twitter.com/gndx">
+          <a href="https://twitter.com/perezcode">
             <img src="${twitterLogo}" />
           </a>
-          <a href="https://github.com/gndx">
+          <a href="https://github.com/perezcode">
             <img src="${gitHubLogo}" />
           </a>
-          <a href="https://instagram.com/gndx">
-            <img src="${instagramLogo}" />
+          <a href="https://linkedin.com/in/perezcode/">
+            <img src="${linkedInLogo}" />
           </a>
         </div>
       </div>
