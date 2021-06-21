@@ -32,6 +32,7 @@ const Template = async () => {
           </a>
         </div>
       </div>
+      <button class="load-new-user">Get new random user</button>
     </div>
   `;
 

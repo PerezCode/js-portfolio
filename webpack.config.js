@@ -56,6 +56,7 @@ module.exports = {
       inject: true,
       template: path.resolve("public", "index.html"),
       filename: "index.html",
+      favicon: path.resolve("public", "favicon.png"),
     }),
     new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
     new DotenvWebpack(),
